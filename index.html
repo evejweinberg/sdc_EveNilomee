@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Software on Wheels</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
+
+    <!-- Theme CSS -->
+    <link href="css/new-age.css" rel="stylesheet">
+
+
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">How do Self Driving Cars Really work?
+</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <li>
+                    <a class="page-scroll" href="#training">Training</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#radar">Radar</a>
+                  </li>
+
+                    <li>
+                        <a class="page-scroll" href="#lidar">Lidar</a>
+                    </li>
+
+                    <li>
+                      <a class="page-scroll" href="#ultrasonic">UltraSonic</a>
+                    </li>
+
+                    <li>
+                        <a class="page-scroll" href="#cv">Computer Vision</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#fusion">Fusion</a>
+                    </li>
+                    <!-- <li>
+                        <a class="page-scroll" href="#contact">GPS</a>
+                    </li> -->
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#resources">Resources</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            <h1>"A car is just software on Wheels" <br><small>-NVIDIA Creator Jen-Hsun Huang
+</small></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+
+                     <div class="device-container">
+                       <a href="http://vicinitysolutions.co.nz/geoblog.php" target="_blank">
+                       <img src="img/cd.gif" class="img-responsive" alt="" >
+                     </a>
+                     <a href="http://slides.com/wilthomason/computer-vision" target="_blank">
+                     <img src="img/roadcv.gif" class="img-responsive" alt="" >
+                   </a>
+                      <!--  <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <img src="img/lidar/1.jpg" class="img-responsive" alt="">
+                                </div>
+                                <div class="button">
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <hr width="90%"></hr>
+
+
+    <section id="training" class="features">
+      <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Training</h2>
+                    <hr class="small">
+
+
+                    <p> For any car to be smart enough to drive safely on the road, they must be trained for thousands of hours on millions of frames of video.
+
+                      All companies researching autonomous vehicles use Machine Learning to create the most comprehensive 360 3D view from the car’s perspective.
+
+
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=KkpxA5rXjmA" target="_blank">
+                      <img src="img/lidar/cv.gif" alt=""></a>
+                      <p>The animation above is from NVIDIA's training program. They created a system called DriveNet which was trained on a group of <strong> 1.2 million images</strong> called 'ImageNet'. They actually warped the images and falsely color corrected them to make the trianing set 10 times as large.
+They fed these images to a convolutional neural network to create 1,000 different classes (ex: person, two people, street sign, dog, fire hydrant, cloud, etc). Using their accelerated GPUs, they
+were able to do this classification in only 1 month. Any other hardware would have taken a couple of years to train this neural network.
+Now, this same neural network can go beyond classification and actually detect these objects. NVIDIA calls this system CityScape and they will be sharing it. The video above shows a work-in-progress stage where it detected bounding boxes, then it learned to identify individual pixels and connect them with objects, color coding the exact pixels of each object.
+</p>
+
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+              <!-- <p>Radar is Radio waves.
+They travel far, are invisible to humans and are easy to detect even when they are faint. High-end cars already bristle with radar, which can track nearby objects. For instance, Mercedes’ Distronic Plus, an accident-prevention system, includes units on the rear bumper that trigger an alert when they detect something in the car’s blind spot.
+</p> -->
+                </div>
+
+              </div>
+            </div>
+            </div>
+            <a href="#radar" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+
+
+    </section>
+
+
+
+
+
+    <section id="radar" class="features">
+      <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Radar</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/bg-cta.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/bg-cta.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/bg-cta.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/bg-cta.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+<hr class="spacer"></hr>
+        <div class="container">
+              <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-left">
+                <div class="col-sm-6">
+
+                     <div class="device-container">
+                       <a href="http://vicinitysolutions.co.nz/geoblog.php" target="_blank">
+                       <img src="img/cd.gif" class="img-responsive" alt="" >
+                     </a>
+                     <a href="http://slides.com/wilthomason/computer-vision" target="_blank">
+                     <img src="img/roadcv.gif" class="img-responsive" alt="" >
+                   </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+              <p>Radar is Radio waves.
+They travel far, are invisible to humans and are easy to detect even when they are faint. High-end cars already bristle with radar, which can track nearby objects. For instance, Mercedes’ Distronic Plus, an accident-prevention system, includes units on the rear bumper that trigger an alert when they detect something in the car’s blind spot.
+</p>
+                </div>
+
+              </div>
+            </div>
+            </div>
+            <a href="#lidar" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+
+
+    </section>
+
+
+
+
+
+
+
+    <!-- <section id="download" class="download bg-primary text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="section-heading">Discover what all the buzz is about!</h2>
+                    <p>Our app is available on any mobile device! Download now to get started!</p>
+                    <div class="badges">
+                        <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+                        <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="lidar" class="features">
+      <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Lidar</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/lidar/1.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/lidar/0.gif">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/lidar/2.gif">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/lidar/3.gif">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+<hr class="spacer"></hr>
+        <div class="container">
+              <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-left">
+                <div class="col-sm-6">
+
+                     <div class="device-container">
+                       <a href="http://vicinitysolutions.co.nz/geoblog.php" target="_blank">
+                       <img src="img/cd.gif" class="img-responsive" alt="" >
+                     </a>
+                     <a href="http://slides.com/wilthomason/computer-vision" target="_blank">
+                     <img src="img/roadcv.gif" class="img-responsive" alt="" >
+                   </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+              <p>Lidar works like radar, but with pulses of light rather than radio waves).
+calculates how far an object is from the moving vehicle based on the time it takes for the laser beams to hit the object and come back.
+200m range
+Cars use lidar for obstacle detection and avoidance to navigate safely through environments, using rotating laser beams.[30] Cost map or point cloud outputs from the lidar sensor provide the necessary data for robot software to determine where potential obstacles exist in the environment. Google employs Velodyne’s rooftop Light Detection and Ranging system, which uses 64 lasers, spinning at upwards of 900 rpm, to generate a point cloud that gives the car a 360-degree view.
+</p>
+                </div>
+
+              </div>
+            </div>
+            </div>
+
+            <a href="#ultrasonic" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+
+
+    </section>
+
+
+
+
+
+
+    <section id="ultrasonic" class="features">
+      <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Ultrasonic</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/bg-cta.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/bg-cta.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/bg-cta.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" id="tight-grid">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/bg-cta.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+<hr class="spacer"></hr>
+        <div class="container">
+              <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-left">
+                <div class="col-sm-6">
+
+                     <div class="device-container">
+                       <a href="http://vicinitysolutions.co.nz/geoblog.php" target="_blank">
+                       <img src="img/cd.gif" class="img-responsive" alt="" >
+                     </a>
+                     <a href="http://slides.com/wilthomason/computer-vision" target="_blank">
+                     <img src="img/roadcv.gif" class="img-responsive" alt="" >
+                   </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+              <p>detectors provide more accurate mapping of the surroundings at short range, for example when parking.
+</p>
+                </div>
+
+              </div>
+            </div>
+            <a href="#cv" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+            </div>
+
+
+    </section>
+
+
+
+
+    <section id="cv" class="features">
+      <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Computer Vision</h2>
+                    <h3>How do we get from camera input to classification?</h3>
+                    <hr class="small">
+                    <a href="#">
+                        <img class="img-portfolio img-responsive" src="img/sara.png">
+                    </a>
+                    <div class="row">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+<hr class="spacer"></hr>
+        <div class="container">
+              <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-left">
+                <div class="col-sm-6">
+
+                     <div class="device-container">
+                       <a href="http://vicinitysolutions.co.nz/geoblog.php" target="_blank">
+                       <img src="img/cd.gif" class="img-responsive" alt="" >
+                     </a>
+                     <a href="http://slides.com/wilthomason/computer-vision" target="_blank">
+                     <img src="img/roadcv.gif" class="img-responsive" alt="" >
+                   </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+              <p>Computers see in numbers.
+</p>
+                </div>
+
+              </div>
+            </div>
+            </div>
+            <a href="#fusion" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+
+
+    </section>
+
+
+    <section id="fusion" class="features">
+      <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Sensor Fusion</h2>
+                    <!-- <h3>How do we get from camera input to classification?</h3> -->
+
+                    <a href="#">
+                        <!-- <img class="img-portfolio img-responsive" src="img/sara.png"> -->
+                    </a>
+                    <div class="row">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+<hr class="spacer"></hr>
+        <div class="container">
+              <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-left">
+                <div class="col-sm-6">
+
+                     <!-- <div class="device-container">
+                       <a href="http://vicinitysolutions.co.nz/geoblog.php" target="_blank">
+                       <img src="img/cd.gif" class="img-responsive" alt="" >
+                     </a>
+                     <a href="http://slides.com/wilthomason/computer-vision" target="_blank">
+                     <img src="img/roadcv.gif" class="img-responsive" alt="" >
+                   </a>
+
+                    </div> -->
+                </div>
+                <div class="col-sm-6">
+
+              <p>Fusion
+</p>
+                </div>
+
+              </div>
+            </div>
+            </div>
+            <a href="#about" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+
+
+    </section>
+
+
+
+
+
+    <section id="about" class="contact bg-primary">
+        <div class="container">
+            <h2>About</h2>
+
+    </section>
+
+    <section id="resources" class="contact bg-primary">
+        <div class="container">
+            <h2>Resources</h2>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2016 Eve and Nilomee. All Rights Reserved.</p>
+
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/new-age.min.js"></script>
+
+</body>
+
+</html>
