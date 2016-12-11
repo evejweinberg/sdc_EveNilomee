@@ -492,34 +492,90 @@
 
 
   </div>
+
     <hr class="spacer"></hr>
 
-
   <div class="row">
-    <!-- <div class="col-lg-10 col-lg-offset-1 text-left"> -->
       <div class="col-sm-6">
-
         <div class="device-container">
           <a href="" target="_blank">
             <img src="img/cv/cv_feature.gif" class="img-responsive bordered-img" alt="">
           </a>
-
-
         </div>
       </div>
       <div class="col-sm-6">
 
         <div class="device-container">
-          <p>STEP 2: Rather than focus on one pixel at a time, a convolutional net looks at the image by analyzing patches at a time. Most examples show a 5px x 5px feature analysis. Let's say that our first feature layer is looking for edges. It will scan the 32x32 image 25 pixels at a time (5px x 5px), recording wether or not that patch has an edge. Iterating through the image, building a new array of information, if the feature believes that the input image has an edge, then it pushes a 1 to the next layer, otherwise a -1. This creates a new layer that is a smaller array of information than the previous one. </p>
-
-
+          <p>STEP 2: Rather than focus on one pixel at a time, a convolutional net looks at the image by analyzing patches at a time. Most examples show a 5px x 5px feature analysis. Let's say that our first feature layer is looking for edges. It will scan the 32x32 image 25 pixels at a time (5px x 5px), recording wether or not that patch has an edge. Iterating through the image, building a new array of information, if the feature believes that the input image has an edge, then it pushes a 1 to the next layer, otherwise a -1.
+            This creates a new layer that is a smaller array of information than the previous one.
+            In the case of self driving cars, some neural networks have been trained with 96 different feature layers (edge detection being 1 of those 96).
+          </p>
+          <br>
+          <p><i>Note: the image is showing a 7px x 7px image being reduced to a 5px x 5px array of information</i></p>
         </div>
       </div>
+  </div>
 
 
-    <!-- </div> -->
+  <hr class="spacer"></hr>
+
+<div class="row">
+    <div class="col-sm-6">
+      <div class="device-container">
+        <a href="" target="_blank">
+          <img src="img/cv/pooling.jpg" class="img-responsive bordered-img" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-6">
+
+      <div class="device-container">
+        <p>STEP 3: Now we have an array for each feature that is basically a map indicating where in the image that feature probably appears (on a scale of -1 to 1). If the feature we're looking for is a diagnal line, the new array would have a 1 everywhere there is definitely a dignal line going through those pixels.
+        </p>
+
+        <br>
+        <p>Ref: <a href="https://www.youtube.com/watch?v=FmpDIaiMIeA"> 'How Convolutional Neural Networks work' </a> YouTube Video</p>
+      </div>
+    </div>
+</div>
+
+
+
+
+<hr class="spacer"></hr>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="device-container">
+      <a href="" target="_blank">
+        <img src="img/cv/poolingB.jpg" class="img-responsive bordered-img" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-6">
+
+    <div class="device-container">
+      <p>STEP 4: POOLING. For every convolved (filtered) layer, we pool it.
+      </p>
+
+      <br>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
 <a href="#fusion" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
 
 
