@@ -564,6 +564,28 @@
 
 
 
+<hr class="spacer"></hr>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="device-container">
+      <a href="" target="_blank">
+        <img src="img/cv/FinalPool.jpg" class="img-responsive bordered-img" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-6">
+
+    <div class="device-container">
+      <p>STEP 5: Final Vote. After enough iterations of convolving and pooling, each pooled number now predicts what the image is.
+
+      <br>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 
@@ -586,7 +608,6 @@
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1 text-center">
         <h2>Sensor Fusion</h2>
-        <!-- <h3>How do we get from camera input to classification?</h3> -->
 
         <a href="#">
           <!-- <img class="img-portfolio img-responsive" src="img/sara.png"> -->
@@ -617,10 +638,47 @@
 
     </div> -->
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-12">
+    <p>Sensor fusion is the process of combining all sensory data derived from the sensors fitted on the car. The data is analysed in stages to identify the car’s location and its surroundings. For a car to be able to drive itself, it requires sensors fitted on the car, a powerful computer and a GPU. The GPU is where the real time computing takes place, thus the PX2 GPU manufactured by NVIDIA is the top choice for car companies building Self Driving cars.</p>
 
-    <p>All of these sensors are collated in realtime by the car's onboard CPU to create a realistic mapping of the world.
-    </p>
+
+<br><br>
+<p>
+<strong>How the car analyses data and makes decisions:</strong>
+<br>
+<br>
+The car is receiving inputs in the form of weather data, image data and sensory data from the sensors like the Ultrasonic Sensor, Radar, Lidar and GPS. The sensory data from each sensor is analysed individually to detect an obstacle and create a depth map.
+<br>
+
+The 2 field view cameras fitted at the front and at the back of the car are. The images captured are taken through a network called DriveNet, that has been trained by NVIDIA on ImageNet to recognize a range of automotives like cars, busses etc. (ImageNet is a database of over 15 million hand labelled images that learning algorithms are trained on). This enables the car to recognize the obstacles by their name.
+
+<br>
+The Lidar sensor create depth map that is a dynamic 3D model of the environment from point cloud data.
+<br>
+<br>
+<strong>Data Fusion:</strong>
+<br>
+<br>
+Based on the inputs from the depth maps, a 2D occupancy grid is created that encodes which cells contain depth measurements. From this grid, the sensory fusion algorithm extracts obstacles from the occupied cells and refines their positions, to determine the uncertainty of each detection.
+
+<br>
+The car assumes that it is moving on a plane, and any object that is not on the plane is identified as a potential obstacle. Each grid cell is checked to see if it is occupied and is initialized with weight zero and updated whenever new obstacle detections are available by adding the respective weight to the grid cells The update is constantly performed in a separate compute thread concurrent to depth map generation and obstacle detection and to update the occupancy map.
+
+<br>
+
+The occupancy map is color coded using the data received from the sensors to mark which areas are identified as obstacles and objects that are moving cars on the road and marks the distance of the car from these obstacles.
+<br>
+<br>
+<strong>Checking the Geographical Location from GPS Data:</strong>
+<br>
+<br>
+At this point we have the model of the world around the car and the car is travelling through this space. The highly accurate model of the world is created offline using the data collected by various cars. This GPS data is available for the car to access to identify its geographical location and direction of travel and to find out which lane it is driving in, so that then it can run more algorithms to do motion planning and navigation. This happens using the Localization Algorithm.
+
+<br>
+The combined output from the Sensor Fusion and Deep Learning algorithms gives the car information about its location and surroundings which can be used by the ‘path planning algorithm’ to make decisions about how to navigate.</p>
+
+    <!-- <p>All of these sensors are collated in realtime by the car's onboard CPU to create a realistic mapping of the world.
+    </p> -->
   </div>
 
 </div>
