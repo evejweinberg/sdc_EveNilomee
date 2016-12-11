@@ -6,6 +6,10 @@
 .bordered-img{
   border: 1px black solid;
 }
+
+.centered{
+  margin: 0 auto;
+}
  #tight-grid{
    padding: 0px;
  }
